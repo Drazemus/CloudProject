@@ -1,5 +1,6 @@
 package com.example.todolist.task;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -53,7 +54,6 @@ public class Task {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public LocalDate getDeadline() {
         return deadline;

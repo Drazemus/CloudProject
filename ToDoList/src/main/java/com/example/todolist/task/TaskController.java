@@ -10,7 +10,7 @@ import java.time.Month;
 import java.util.List;
 
 @RestController
-@RequestMapping(path="api/v1/task")
+@RequestMapping(path="/task")
 public class TaskController {
 
     private final TaskService taskService;
@@ -20,20 +20,20 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Task> getTasks(){
         return taskService.getTasks();
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public void registerNewTask(@RequestBody Task task){taskService.addNewTask(task);}
 
-    @DeleteMapping(path = "{taskId}")
+    @DeleteMapping(path = "/delete/{taskId}")
     public void deleteTask(@PathVariable("taskId")Long taskId){
         taskService.deleteTask(taskId);
     }
 
-    @PutMapping(path = "taskId")
+    @PutMapping(path = "/update/taskId")
     public void updateTask(
             @PathVariable("taskId") Long taskId,
             @RequestParam(required = false) String name,

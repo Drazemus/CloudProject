@@ -15,14 +15,10 @@ public class TaskConfig {
         return args -> {
             Task task1 = new Task(
                     "Do the cloud project",
-                    LocalDate.of(2023, Month.NOVEMBER,28)
-            );
-            Task task2 = new Task(
-                    "Do the cloud project",
-                    LocalDate.of(2023, Month.NOVEMBER,28)
+                    LocalDate.of(2023, Month.DECEMBER,15)
             );
 
-            taskRepository.saveAll(List.of(task1,task2));
+            taskRepository.save(task1);
         };
     }
 }
