@@ -1,6 +1,12 @@
+com/example/todolist/label/LabelConfig.class
 com/example/todolist/ServletInitializer.class
 com/example/todolist/label/Label.class
 com/example/todolist/task/TaskController.class
-com/example/todolist/task/Task.class
 com/example/todolist/task/TaskService.class
+com/example/todolist/label/LabelService.class
+com/example/todolist/task/TaskRepository.class
+com/example/todolist/task/TaskConfig.class
+com/example/todolist/label/LabelController.class
+com/example/todolist/task/Task.class
+com/example/todolist/label/LabelRepository.class
 com/example/todolist/TodolistApplication.class

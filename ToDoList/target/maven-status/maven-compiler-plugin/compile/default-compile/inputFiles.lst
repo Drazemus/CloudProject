@@ -1,6 +1,12 @@
 /home/emilie/Documents/ToDoList/src/main/java/com/example/todolist/TodolistApplication.java
+/home/emilie/Documents/ToDoList/src/main/java/com/example/todolist/label/LabelService.java
+/home/emilie/Documents/ToDoList/src/main/java/com/example/todolist/task/TaskRepository.java
 /home/emilie/Documents/ToDoList/src/main/java/com/example/todolist/task/TaskController.java
 /home/emilie/Documents/ToDoList/src/main/java/com/example/todolist/task/TaskService.java
 /home/emilie/Documents/ToDoList/src/main/java/com/example/todolist/label/Label.java
+/home/emilie/Documents/ToDoList/src/main/java/com/example/todolist/label/LabelRepository.java
+/home/emilie/Documents/ToDoList/src/main/java/com/example/todolist/label/LabelController.java
 /home/emilie/Documents/ToDoList/src/main/java/com/example/todolist/ServletInitializer.java
+/home/emilie/Documents/ToDoList/src/main/java/com/example/todolist/label/LabelConfig.java
+/home/emilie/Documents/ToDoList/src/main/java/com/example/todolist/task/TaskConfig.java
 /home/emilie/Documents/ToDoList/src/main/java/com/example/todolist/task/Task.java
