@@ -14,7 +14,9 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   todolist:
-    image: 148.60.225.81:5000/iai3_01_malo_back-image-01:0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     depends_on:
