@@ -29,6 +29,7 @@ public class TodolistApplication {
         corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
         urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
+        corsConfiguration.setAllowedOrigins(Arrays.asList("http://192.168.0.251:4200"));
         return new CorsFilter(urlBasedCorsConfigurationSource);
     }
 
