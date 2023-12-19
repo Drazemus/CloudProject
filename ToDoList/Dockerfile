@@ -1,9 +1,24 @@
-FROM tomcat:8.0-alpine
+# Use a base image with JDK and Maven installed
+FROM maven:3-eclipse-temurin-21 AS build
+WORKDIR /app
 
-LABEL maintainer=”mloubout@enssat.fr”
+# Copy the POM file and download dependencies
+COPY pom.xml .
+RUN mvn dependency:go-offline
 
-ADD /target/todolist-1.0.0-SNAPSHOT.war /usr/local/tomcat/webapps/
+# Copy the application source code
+COPY src ./src
 
-EXPOSE 8080
+# Build the application
+RUN mvn package -Dmaven.test.skip
 
-CMD ["catalina.sh", "run"]
+# Use a lighter base image for runtime
+FROM eclipse-temurin:21-alpine
+
+WORKDIR /app
+
+# Copy the built JAR file from the previous stage
+COPY --from=build /app/target/todolist-1.0.0-SNAPSHOT.war ./app.war
+
+# Set the default command to run your application
+CMD ["java", "-jar", "app.war"]
