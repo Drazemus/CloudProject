@@ -1,15 +1,16 @@
 version: '3.8'
 
-back:
-    image: 148.60.225.81:5000/iai3_01_malo_back-image-01:0.2
-    ports:
-      - "8080:8080"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://192.168.0.252:5432/taskdb
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: Five5Guys?
+services:
+  back:
+      image: 148.60.225.81:5000/iai3_01_malo_back-image-01:0.1
+      ports:
+        - "8080:8080"
+      environment:
+        SPRING_DATASOURCE_URL: jdbc:postgresql://192.168.0.252:5432/taskdb
+        SPRING_DATASOURCE_USERNAME: postgres
+        SPRING_DATASOURCE_PASSWORD: Five5Guys?
 
-front:
-    image: 148.60.225.81:5000/iai3_01_malo_front-image-01:0.2
-    ports:
-      - "80:4200"
+  front:
+      image: 148.60.225.81:5000/iai3_01_malo_front-image-01:0.2
+      ports:
+        - "80:4200"
