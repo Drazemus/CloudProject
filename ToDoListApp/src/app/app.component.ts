@@ -33,8 +33,15 @@ export class AppComponent implements OnInit{
   }
 
   public onAddEmloyee(addForm: NgForm): void {
+    // Check if any of the required fields are empty
+    if (!addForm.value.name || !addForm.value.deadline) {
+      alert('Please fill out all required fields.');
+      return;
+    }
+  
     console.log(addForm.value);
     document.getElementById('addTask')!.click();
+    
     this.taskservice.addTask(addForm.value).subscribe(
       (response: Task) => {
         console.log(response);
