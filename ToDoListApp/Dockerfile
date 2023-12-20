@@ -1,13 +1,11 @@
-FROM node:14 AS build
+FROM node:16.15.0-alpine AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
-RUN npm run build -- --output-path=./dist
+RUN npm run build
 
-FROM node:14
-WORKDIR /app
-COPY --from=build /app/dist ./dist
-RUN npm install -g @angular/cli serve dist http-server
-EXPOSE 4200
-CMD ["serve", "-s", "dist", "-l", "4200"]
+# Run stage
+FROM nginx:alpine
+COPY --from=build /app/dist/to-do-list-app /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf

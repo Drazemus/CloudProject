@@ -9,4 +9,5 @@ com/example/todolist/task/TaskConfig.class
 com/example/todolist/label/LabelController.class
 com/example/todolist/task/Task.class
 com/example/todolist/label/LabelRepository.class
+com/example/todolist/TodolistApplication$CorsFilter.class
 com/example/todolist/TodolistApplication.class

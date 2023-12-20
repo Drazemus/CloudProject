@@ -20,5 +20,7 @@ WORKDIR /app
 # Copy the built JAR file from the previous stage
 COPY --from=build /app/target/todolist-1.0.0-SNAPSHOT.war ./app.war
 
+EXPOSE 8080
+
 # Set the default command to run your application
 CMD ["java", "-jar", "app.war"]
